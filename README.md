@@ -9,3 +9,5 @@ Schedule timeline:
 17-28 April: Iteration 3. Outcomes: Working Software v3.
 1-12 May: Iteration 4. Outcomes: Working Software v4.
 15-26 May: Software final delivery.
+
+V1(Updated-2023/3/30)-This system uses Java Web technology to realize the student information management system, has a simple student information management function. Realized the following functional modules: department information management module, student information management module, course information management module, performance management module and can automatically display related operations according to the user's rights.
