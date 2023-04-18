@@ -18,7 +18,7 @@ Name, BUPT Student Number, QM Student Number, Email
 
 Assigned TA: Jiajing CHEN
 
-*Schedule timeline:*
+##Schedule timeline:
 
 *13-15 March: Meet group members, appoint a group leader and discuss the project handout.*  
 
@@ -35,9 +35,9 @@ Assigned TA: Jiajing CHEN
 *15-26 May: Software final delivery.*  
 
 
-V2(Updated-2023/4/18)-  
+##V2(Updated-2023/4/18)-  
 
-  This project is based on a native java program. Based on java swing and awt to complete the graphical interface.   
-  V2 version meets the basic needs of the project, and realizes the basic needs of achievement inquiry, honor inquiry and account management; At the same time, the administrator account and teacher account interface are added to realize the basic addition, deletion, modification and check.  
-  Our team uses agile development process and prototype analysis process throughout the process. The full prototype design of the project was uploaded in version v2.  
-  Next phase: We will accomplish more of our stated goals and gradually beautify the GUI interface with the javafx framework.
+   This project is based on a native java program. Based on java swing and awt to complete the graphical interface.   
+   V2 version meets the basic needs of the project, and realizes the basic needs of achievement inquiry, honor inquiry and account management; At the same time, the administrator account and teacher account interface are added to realize the basic addition, deletion, modification and check.  
+   Our team uses agile development process and prototype analysis process throughout the process. The full prototype design of the project was uploaded in version v2. 
+   Next phase: We will accomplish more of our stated goals and gradually beautify the GUI interface with the javafx framework.
