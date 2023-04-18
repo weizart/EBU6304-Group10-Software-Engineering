@@ -1,0 +1,6 @@
+2020fall		Curriculum-A		2020215101		WJ		98		4.0		4		x		x
+2021spring		Curriculum-B		2020215101		WJ		65		2.0		1		x		x
+2021fall		Curriculum-C		2020215101		WJ		88		3.6		2		x		x
+2022spring		Curriculum-D		2020215101		WJ		90		3.8		3		x		x
+2022fall		Curriculum-E		2020215101		WJ		82		3.2		3		x		x
+2023spring		Curriculum-F		2020215101		WJ		85		3.4		2		x		x
