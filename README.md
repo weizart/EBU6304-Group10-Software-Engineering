@@ -1,5 +1,23 @@
 # Software Engineering 22/23 - Group10 Repositary
 
+## Group Number: 2023EBU6304G10
+
+## Project Title: Student Learning System
+
+## Members:
+
+Ziang Wei, BUPT 2020213043, QM 200978844, Email weiziang@bupt.edu.cn
+
+Name, BUPT Student Number, QM Student Number, Email
+
+Name, BUPT Student Number, QM Student Number, Email
+
+Name, BUPT Student Number, QM Student Number, Email
+
+Name, BUPT Student Number, QM Student Number, Email
+
+## Assigned TA: Jiajing CHEN
+
 *Schedule timeline:*
 
 *13-15 March: Meet group members, appoint a group leader and discuss the project handout.*
@@ -10,4 +28,8 @@
 *1-12 May: Iteration 4. Outcomes: Working Software v4.*
 *15-26 May: Software final delivery.*
 
-V1(Updated-2023/3/30)-This system uses Java Web to accomplish the student information management system, has a simple student information management function. Realized the following functional modules: department information management module, student information management module, course information management module, performance management module and can automatically display related operations according to the user's rights.
+V2(Updated-2023/4/18)-
+  This project is based on a native java program. Based on java swing and awt to complete the graphical interface. 
+  V2 version meets the basic needs of the project, and realizes the basic needs of achievement inquiry, honor inquiry and account management; At the same time, the administrator account and teacher account interface are added to realize the basic addition, deletion, modification and check.
+  Our team uses agile development process and prototype analysis process throughout the process. The full prototype design of the project was uploaded in version v2.
+  Next phase: We will accomplish more of our stated goals and gradually beautify the GUI interface with the javafx framework.
