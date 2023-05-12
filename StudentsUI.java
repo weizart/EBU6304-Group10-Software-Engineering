@@ -1,9 +1,6 @@
 package gui;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
+import java.awt.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -88,7 +85,7 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 
 
 		JPanel photo = new JPanel();
-		JLabel stuphoto = new JLabel(new ImageIcon("C:\\Users\\魏子昂\\Desktop\\bighomework\\src\\img\\wangjie.jpg"));
+		JLabel stuphoto = new JLabel(new ImageIcon("C:\\Users\\10957\\Desktop\\bighomework\\src\\img\\wangjie.jpg"));
 		stuname = new JLabel("Wang Jie 2020213039");
 		photo.add(stuphoto);
 		photo.add(stuname);
@@ -124,8 +121,96 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 
 	public JPanel getPaneltimetableSystem() {
 		JPanel tt = new JPanel();
+		tt.setLayout(new BorderLayout());
+		JLabel label1=new JLabel("周数："); //创建标签
+		JComboBox year=new JComboBox(); //创建JComboBox
+		year.addItem("--请选择学年--"); //向下拉列表中添加一项
+		year.addItem("2020-2021");
+		year.addItem("2021-2022");
+		year.addItem("2022-2023");
+		JComboBox week=new JComboBox(); //创建JComboBox
+		week.addItem("--请选择周数--"); //向下拉列表中添加一项
+		week.addItem("第一周");
+		week.addItem("第二周");
+		week.addItem("第三周");
+		JButton button=new JButton("查询");
+		JPanel p = new JPanel(new GridLayout(1,3));
+		p.add(year);
+		p.add(week);
+		p.add(button);
+		tt.add(p,BorderLayout.NORTH);
+
+//		JTable table=new JTable(7,6);
+//		table.setRowHeight(60);
+//		String[] columnNames = {"","","列名3"};
+//		//定义一个Vector数组（Vector各个元素由Vector组成，即数组的“二维存储”）
+//		Vector v = new Vector(3);
+//		v.add("8:00-9:30", "高等数学", "数据结构");
+//		v.add("9:40-11.10","s", "");
+//		v.add("11:20-12:50","", "");
+//		//定义一个DefaultTableModel类，来实现TableModel接口
+//		DefaultTableModel newtablemodel = new DefaultTableModel();
+//		//用setColumnIdentifiers替换列（或者说设置列名）
+//		newtablemodel.setColumnIdentifiers(columnNames);
+//		//将vector添加到DefaultTableModel中，用addRow()方法，这是添加行数据到表格中的方法
+//		newtablemodel.addRow(v);
+//		tt.add(table,BorderLayout.CENTER);
+
+
+		//加入 表头 及 数据
+		Vector columnNames=createColumnNames3();
+		Vector data=createTableModelData3();
+		model = new DefaultTableModel(data,columnNames);
+
+		//设计表格不可编辑
+		table = new JTable(model){
+			public boolean isCellEditable(int row, int column) {
+				return false;
+			}
+		};
+
+		JScrollPane tablePanel = new JScrollPane(table);
+		table.setForeground(Color.BLACK);                   // 字体颜色
+		table.setFont(new Font(null, Font.PLAIN, 15));      // 字体样式
+		table.setSelectionForeground(Color.DARK_GRAY);      // 选中后字体颜色
+		table.setSelectionBackground(Color.LIGHT_GRAY);     // 选中后字体背景
+		table.setGridColor(Color.GRAY);
+
+		// 设置表头
+		table.getTableHeader().setFont(new Font(null, Font.BOLD, 20));  // 设置表头名称字体样式
+		table.getTableHeader().setForeground(Color.RED);                // 设置表头名称字体颜色
+		table.getTableHeader().setResizingAllowed(false);               // 设置不允许手动改变列宽
+		table.getTableHeader().setReorderingAllowed(false);             // 设置不允许拖动重新排序各列
+		// 设置行高
+		table.setRowHeight(60);
+		//数据显示且居中
+		DefaultTableCellRenderer r = new DefaultTableCellRenderer();
+		r.setHorizontalAlignment(JLabel.CENTER);
+		table.setDefaultRenderer(Object.class, r);
+		// 设置每一列列宽
+		table.getColumnModel().getColumn(0).setPreferredWidth(110);
+		table.getColumnModel().getColumn(1).setPreferredWidth(110);
+		table.getColumnModel().getColumn(2).setPreferredWidth(110);
+		table.getColumnModel().getColumn(3).setPreferredWidth(110);
+		table.getColumnModel().getColumn(4).setPreferredWidth(110);
+		table.getColumnModel().getColumn(5).setPreferredWidth(110);
+
+
+		// 设置滚动面板视口大小（超过该大小的行数据，需要拖动滚动条才能看到）
+		table.setPreferredScrollableViewportSize(new Dimension(1000, 420));
+
+		//排序器
+		RowSorter sorter = new TableRowSorter(model);
+		table.setRowSorter(sorter);
+		// 把 表格 放到 滚动面板 中（表头将自动添加到滚动面板顶部）
+		scrollPane = new JScrollPane(table);
+		// 添加 滚动面板 到 内容面板
+		tt.add(scrollPane,BorderLayout.CENTER);
+
 		//课程表的内容
 		return tt;
+
+
 	}
 
 	public JPanel getPanelmoduleSystem() {
@@ -237,7 +322,7 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 		Vector data = new Vector();
 		String t=null;
 		try{
-			FileReader f1 = new FileReader("C:\\Users\\魏子昂\\Desktop\\bighomework\\src\\Grades.txt");
+			FileReader f1 = new FileReader("C:\\Users\\10957\\Desktop\\bighomework\\src\\Grades.txt");
 			BufferedReader br=new BufferedReader(f1);
 			int i=0 ,k=1;
 			while ((t= br.readLine())!= null)
@@ -354,7 +439,7 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 		Vector data = new Vector();
 		String t=null;
 		try{
-			FileReader f1 = new FileReader("C:\\Users\\魏子昂\\Desktop\\bighomework\\src\\Achievement.txt");
+			FileReader f1 = new FileReader("C:\\Users\\10957\\Desktop\\bighomework\\src\\Achievement.txt");
 			BufferedReader br=new BufferedReader(f1);
 			int i=0 ,k=1;
 			while ((t= br.readLine())!= null)
@@ -383,6 +468,47 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 		columnNames.add("Name");
 		columnNames.add("Achievement");
 		columnNames.add("Date");
+
+		return columnNames;
+	}
+
+	private Vector createTableModelData3() {
+		Vector data = new Vector();
+		String t=null;
+		try{
+			FileReader f1 = new FileReader("C:\\Users\\10957\\Desktop\\bighomework\\src\\Timetable.txt");
+			BufferedReader br=new BufferedReader(f1);
+			int i=0 ,k=1;
+			while ((t= br.readLine())!= null)
+			{
+				String [] s=t.split("\\s+");		//通过空格分割字符串数组
+				Vector rowData = new Vector();
+				rowData.add(s[0]);
+				rowData.add(s[1]);
+				rowData.add(s[2]);
+				rowData.add(s[3]);
+				rowData.add(s[4]);
+				rowData.add(s[5]);
+				data.add(rowData);
+				i++;
+				k++;
+			}
+			f1.close();
+			br.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return data;
+	}
+	//表头
+	private Vector createColumnNames3() {
+		Vector columnNames = new Vector();
+		columnNames.add("");
+		columnNames.add("Monday");
+		columnNames.add("Tuesday");
+		columnNames.add("Wednesday");
+		columnNames.add("Thursday");
+		columnNames.add("FFriday");
 
 		return columnNames;
 	}
