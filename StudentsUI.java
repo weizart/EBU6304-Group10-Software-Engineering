@@ -1,9 +1,6 @@
 package gui;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
+import java.awt.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -22,6 +19,7 @@ import javax.swing.text.StyledDocument;
 
 import entity.Examwork;
 import function.Function;
+
 
 public class StudentsUI extends JFrame implements ListSelectionListener {
 	private JFrame mainframe ;
@@ -88,7 +86,7 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 
 
 		JPanel photo = new JPanel();
-		JLabel stuphoto = new JLabel(new ImageIcon("C:\\Users\\魏子昂\\Desktop\\bighomework\\src\\img\\wangjie.jpg"));
+		JLabel stuphoto = new JLabel(new ImageIcon("D:\\Group Work\\bighomework\\src\\img\\wangjie.jpg"));
 		stuname = new JLabel("Wang Jie 2020213039");
 		photo.add(stuphoto);
 		photo.add(stuname);
@@ -118,7 +116,117 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 	}
 	public JPanel getPanelmainpageSystem() {
 		JPanel mp = new JPanel();
-		//主页的内容
+		//分割出上下两行
+		mp.setLayout(new GridLayout(2,1));
+		//第一行中分出两个panel
+		Panel p1=new Panel(new GridLayout(1,2));
+		//设置第一行的两个分Panel
+		Panel p1_1=new Panel(new BorderLayout());
+		Panel p1_2=new Panel(new BorderLayout());
+		Panel p1_2_2 = new Panel (new GridLayout(2,2));
+		//第二行中分出三个panel
+		Panel p2=new Panel(new GridLayout(1,3));
+		//设置第二行的三个panel
+		Panel p2_1=new Panel(new BorderLayout());
+		Panel p2_2=new Panel(new BorderLayout());
+		Panel p2_3=new Panel(new BorderLayout());
+//		p1_1.setBackground(Color.BLACK);
+//		p1_2.setBackground(Color.BLUE);
+//		p2_1.setBackground(Color.GREEN);
+//		p2_2.setBackground(Color.RED);
+//		p2_3.setBackground(Color.PINK);
+
+		Font f=new Font("Times New Roman",Font.BOLD,30);
+
+		JTextArea jta1=new JTextArea("Class Schedule");
+//		jta1.setSize(p1_1.getWidth(),1/5*p1_1.getHeight());
+		jta1.setEnabled(false);
+		jta1.setForeground(Color.black);
+		jta1.setFont(f);
+		p1_1.add(jta1,BorderLayout.NORTH);
+
+		String[] ColumnNames={"Week/Time Period","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"};
+		String[][] TableValues={{"08:00-08:45","","","","","","",""},
+								{"08:50-09:35","","","","","","",""},
+								{"09:50-10:35","","","","","","",""},
+								{"10:40-11:25","","","","","","",""},
+								{"11:30-12:15","","","","","","",""},
+								{"13:00-13:45","","","","","","",""},
+								{"13:50-14:35","","","","","","",""},
+								{"14:45-15:30","","","","","","",""},
+								{"15:40-16:25","","","","","","",""},
+								{"16:35-17:20","","","","","","",""},
+								{"17:25-18:10","","","","","","",""}};
+
+
+		JTable jtb=new JTable(TableValues,ColumnNames);
+		JScrollPane js=new JScrollPane(jtb);
+		js.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		jtb.setEnabled(false);
+		jtb.setFillsViewportHeight(true);
+//		jtb.setSize(p1_1.getWidth(),p1_1.getHeight());
+		p1_1.add(jtb);
+
+
+
+
+		JButton jb1=new JButton("Check Grades");
+		JButton jb2=new JButton("Online Diploma");
+		JButton jb3=new JButton("Select Courses");
+		JButton jb4=new JButton("Application for Deferred Exam");
+		p1_2_2.add(jb1);
+		p1_2_2.add(jb2);
+		p1_2_2.add(jb3);
+		p1_2_2.add(jb4);
+		p1_2.add(p1_2_2);
+
+		JTextArea jta2=new JTextArea("Useful Options");
+//		jta1.setSize(p1_1.getWidth(),1/5*p1_1.getHeight());
+		jta2.setEnabled(false);
+		jta2.setForeground(Color.black);
+		jta2.setFont(f);
+		p1_2.add(jta2,BorderLayout.NORTH);
+
+		JTextArea jta3=new JTextArea("Online Q&A");
+//		jta1.setSize(p1_1.getWidth(),1/5*p1_1.getHeight());
+		jta3.setEnabled(false);
+		jta3.setForeground(Color.black);
+		jta3.setFont(f);
+		p2_1.add(jta3,BorderLayout.NORTH);
+		jta3.setBackground(Color.LIGHT_GRAY);
+
+
+		JTextArea jta4=new JTextArea("Announcement");
+//		jta1.setSize(p1_1.getWidth(),1/5*p1_1.getHeight());
+		jta4.setForeground(Color.black);
+		jta4.setFont(f);
+		jta4.setEnabled(false);
+		p2_2.add(jta4,BorderLayout.NORTH);
+		jta4.setBackground(Color.LIGHT_GRAY);
+
+		JTextArea jta4_1=new JTextArea("The educational administration system will be updated in the near future");
+//		jta1.setSize(p1_1.getWidth(),1/5*p1_1.getHeight());
+		jta4_1.setEnabled(false);
+		jta4_1.setForeground(Color.black);
+		p2_2.add(jta4_1,BorderLayout.CENTER);
+
+		JTextArea jta5=new JTextArea("Semester Schedule");
+//		jta1.setSize(p1_1.getWidth(),1/5*p1_1.getHeight());
+		jta5.setEnabled(false);
+		jta5.setForeground(Color.black);
+		jta5.setFont(f);
+		p2_3.add(jta5,BorderLayout.NORTH);
+		jta5.setBackground(Color.LIGHT_GRAY);
+
+		//依次叠加panel
+		mp.add(p1);
+		mp.add(p2);
+		p1.add(p1_1);
+		p1.add(p1_2);
+		p2.add(p2_1);
+		p2.add(p2_2);
+		p2.add(p2_3);
+
 		return mp;
 	}
 
@@ -237,7 +345,7 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 		Vector data = new Vector();
 		String t=null;
 		try{
-			FileReader f1 = new FileReader("C:\\Users\\魏子昂\\Desktop\\bighomework\\src\\Grades.txt");
+			FileReader f1 = new FileReader("D:\\Group Work\\bighomework\\src\\Grades.txt");
 			BufferedReader br=new BufferedReader(f1);
 			int i=0 ,k=1;
 			while ((t= br.readLine())!= null)
@@ -354,7 +462,7 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 		Vector data = new Vector();
 		String t=null;
 		try{
-			FileReader f1 = new FileReader("C:\\Users\\魏子昂\\Desktop\\bighomework\\src\\Achievement.txt");
+			FileReader f1 = new FileReader("D:\\Group Work\\bighomework\\src\\Achievement.txt");
 			BufferedReader br=new BufferedReader(f1);
 			int i=0 ,k=1;
 			while ((t= br.readLine())!= null)
