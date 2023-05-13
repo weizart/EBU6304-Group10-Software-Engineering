@@ -22,6 +22,8 @@ import javax.swing.text.StyledDocument;
 
 import entity.Examwork;
 import function.Function;
+import gui.student.analysis.ScoreListUI;
+import gui.student.modules.ModuleListUI;
 
 public class StudentsUI extends JFrame implements ListSelectionListener {
 	private JFrame mainframe ;
@@ -29,6 +31,9 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 	private JSplitPane splitPane;
 	private ArrayList<JPanel> panelList;
 	private String[] function = {"Mainpage","Time Table","My Modules","Score Inquiry","Achivement Inquiry","Analysis"};
+
+	public static final String imagePath = "D:\\bighomework\\src\\img\\";
+	public static final String dataPath = "D:\\bighomework\\src\\";
 
 	Function fun = new Function();
 	Examwork exam = new Examwork();
@@ -85,10 +90,8 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 		panelList.add(getPanelanalysisSystem());
 		panelList.add(getAchievementInformation());
 
-
-
 		JPanel photo = new JPanel();
-		JLabel stuphoto = new JLabel(new ImageIcon("C:\\Users\\魏子昂\\Desktop\\bighomework\\src\\img\\wangjie.jpg"));
+		JLabel stuphoto = new JLabel(new ImageIcon(imagePath + "wangjie.jpg"));
 		stuname = new JLabel("Wang Jie 2020213039");
 		photo.add(stuphoto);
 		photo.add(stuname);
@@ -129,12 +132,13 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 	}
 
 	public JPanel getPanelmoduleSystem() {
-		JPanel module = new JPanel();
+		JPanel module = new ModuleListUI();
 		//课程模块的内容
 		return module;
 	}
 	public JPanel getPanelanalysisSystem() {
-		JPanel ana = new JPanel();
+		JPanel ana = new ScoreListUI();
+		ana.setBounds(20, 20, 700, 500);
 		//成绩分析
 		return ana;
 	}
@@ -237,7 +241,7 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 		Vector data = new Vector();
 		String t=null;
 		try{
-			FileReader f1 = new FileReader("C:\\Users\\魏子昂\\Desktop\\bighomework\\src\\Grades.txt");
+			FileReader f1 = new FileReader(dataPath + "Grades.txt");
 			BufferedReader br=new BufferedReader(f1);
 			int i=0 ,k=1;
 			while ((t= br.readLine())!= null)
@@ -354,7 +358,7 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 		Vector data = new Vector();
 		String t=null;
 		try{
-			FileReader f1 = new FileReader("C:\\Users\\魏子昂\\Desktop\\bighomework\\src\\Achievement.txt");
+			FileReader f1 = new FileReader(dataPath + "Achievement.txt");
 			BufferedReader br=new BufferedReader(f1);
 			int i=0 ,k=1;
 			while ((t= br.readLine())!= null)
