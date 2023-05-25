@@ -41,7 +41,7 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 		mainframe.setTitle("Student page");
 		mainframe.setSize(1480, 700);
 		mainframe.setLocation(350, 200);
-		mainframe.setLocationRelativeTo(null);//Ê¹´°¿Ú¾ÓÖĞ
+		mainframe.setLocationRelativeTo(null);//ä½¿çª—å£å±…ä¸­
 		mainframe.setVisible(true);
 		mainframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -73,8 +73,8 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		list.setSelectedIndex(0);
 		list.addListSelectionListener(this);
-		list.setFont(new Font("´ÖÌå",Font.BOLD,15));
-		//Ò³ÃæÁĞ±í
+		list.setFont(new Font("ç²—ä½“",Font.BOLD,15));
+		//é¡µé¢åˆ—è¡¨
 //		panelList.add(getPanelAboutSystem());
 		panelList.add(getPanelmainpageSystem());
 		panelList.add(getPaneltimetableSystem());
@@ -83,30 +83,6 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 		panelList.add(getPanelanalysisSystem());
 		panelList.add(getAchievementInformation());
 
-
-
-		JPanel photo = new JPanel();
-		JLabel stuphoto = new JLabel(new ImageIcon("D:\\Group Work\\bighomework\\src\\img\\wangjie.jpg"));
-		stuname = new JLabel("Wang Jie 2020213039");
-		photo.add(stuphoto);
-		photo.add(stuname);
-
-		splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,list,panelList.get(0));
-		splitPane.setDividerLocation(150);
-		splitPane.setEnabled(false);
-		getContentPane().add(splitPane, BorderLayout.CENTER);
-		// ´´½¨Ò»¸ö´¹Ö±·½ÏòµÄ·Ö¸îÃæ°å
-		final JSplitPane vSplitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
-		vSplitPane.setDividerLocation(200);
-		vSplitPane.setEnabled(false);
-		vSplitPane.setDividerSize(8);// ·Ö¸ôÌõµÄ¿í¶ÈÎª8ÏñËØ
-		vSplitPane.setOneTouchExpandable(true);// Ìá¹©UIĞ¡²¿¼ş
-		// ÔÚµ÷Õû·Ö¸ôÌõÎ»ÖÃÊ±Ãæ°åµÄÖØ»æ·½Ê½ÎªÁ¬Ğø»æÖÆ
-		vSplitPane.setContinuousLayout(true);
-		splitPane.setLeftComponent(vSplitPane);
-		vSplitPane.setLeftComponent(photo);
-		vSplitPane.setRightComponent(list);
-		mainframe.add(splitPane);
 	}
 	@Override
 	public void valueChanged(ListSelectionEvent e) {
@@ -116,17 +92,17 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 	}
 	public JPanel getPanelmainpageSystem() {
 		JPanel mp = new JPanel();
-		//·Ö¸î³öÉÏÏÂÁ½ĞĞ
+		//åˆ†å‰²å‡ºä¸Šä¸‹ä¸¤è¡Œ
 		mp.setLayout(new GridLayout(2,1));
-		//µÚÒ»ĞĞÖĞ·Ö³öÁ½¸öpanel
+		//ç¬¬ä¸€è¡Œä¸­åˆ†å‡ºä¸¤ä¸ªpanel
 		Panel p1=new Panel(new GridLayout(1,2));
-		//ÉèÖÃµÚÒ»ĞĞµÄÁ½¸ö·ÖPanel
+		//è®¾ç½®ç¬¬ä¸€è¡Œçš„ä¸¤ä¸ªåˆ†Panel
 		Panel p1_1=new Panel(new BorderLayout());
 		Panel p1_2=new Panel(new BorderLayout());
 		Panel p1_2_2 = new Panel (new GridLayout(2,2));
-		//µÚ¶şĞĞÖĞ·Ö³öÈı¸öpanel
+		//ç¬¬äºŒè¡Œä¸­åˆ†å‡ºä¸‰ä¸ªpanel
 		Panel p2=new Panel(new GridLayout(1,3));
-		//ÉèÖÃµÚ¶şĞĞµÄÈı¸öpanel
+		//è®¾ç½®ç¬¬äºŒè¡Œçš„ä¸‰ä¸ªpanel
 		Panel p2_1=new Panel(new BorderLayout());
 		Panel p2_2=new Panel(new BorderLayout());
 		Panel p2_3=new Panel(new BorderLayout());
@@ -144,19 +120,6 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 		jta1.setForeground(Color.black);
 		jta1.setFont(f);
 		p1_1.add(jta1,BorderLayout.NORTH);
-
-		String[] ColumnNames={"Week/Time Period","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"};
-		String[][] TableValues={{"08:00-08:45","","","","","","",""},
-								{"08:50-09:35","","","","","","",""},
-								{"09:50-10:35","","","","","","",""},
-								{"10:40-11:25","","","","","","",""},
-								{"11:30-12:15","","","","","","",""},
-								{"13:00-13:45","","","","","","",""},
-								{"13:50-14:35","","","","","","",""},
-								{"14:45-15:30","","","","","","",""},
-								{"15:40-16:25","","","","","","",""},
-								{"16:35-17:20","","","","","","",""},
-								{"17:25-18:10","","","","","","",""}};
 
 
 		JTable jtb=new JTable(TableValues,ColumnNames);
@@ -218,7 +181,7 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 		p2_3.add(jta5,BorderLayout.NORTH);
 		jta5.setBackground(Color.LIGHT_GRAY);
 
-		//ÒÀ´Îµş¼Ópanel
+		//ä¾æ¬¡å åŠ panel
 		mp.add(p1);
 		mp.add(p2);
 		p1.add(p1_1);
@@ -230,35 +193,19 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 		return mp;
 	}
 
-	public JPanel getPaneltimetableSystem() {
-		JPanel tt = new JPanel();
-		//¿Î³Ì±íµÄÄÚÈİ
-		return tt;
-	}
-
-	public JPanel getPanelmoduleSystem() {
-		JPanel module = new JPanel();
-		//¿Î³ÌÄ£¿éµÄÄÚÈİ
-		return module;
-	}
-	public JPanel getPanelanalysisSystem() {
-		JPanel ana = new JPanel();
-		//³É¼¨·ÖÎö
-		return ana;
-	}
 
 	public JPanel getPanelAboutSystem() {
 		JPanel mainPanel = new JPanel();
 
 		JTextPane explain = new JTextPane();
 		JLabel headline = new JLabel("About us");
-		headline.setFont(new Font("´ÖÌå",Font.PLAIN,20));//ÉèÖÃ×ÖÌå
+		headline.setFont(new Font("ç²—ä½“",Font.PLAIN,20));//è®¾ç½®å­—ä½“
 
 		explain.setText("EBU6304 \r\n" +
 				"Software Engineering\r\n" +
 				"Group10\r\n" );
-		StyledDocument doc = explain.getStyledDocument();//------model---°ÑÊôĞÔ¼¯¡¢ÎÄ±¾ÄÚÈİ½áºÏÆğÀ´
-		SimpleAttributeSet setSize = new SimpleAttributeSet();//---ÊôĞÔ¼¯---°ÑÒª¼ÓµÄÊôĞÔÏÈ·ÅÒ»Æğ---ÔÙ¼ÓÈëÎÄ±¾ÄÚÈİ
+		StyledDocument doc = explain.getStyledDocument();//------model---æŠŠå±æ€§é›†ã€æ–‡æœ¬å†…å®¹ç»“åˆèµ·æ¥
+		SimpleAttributeSet setSize = new SimpleAttributeSet();//---å±æ€§é›†---æŠŠè¦åŠ çš„å±æ€§å…ˆæ”¾ä¸€èµ·---å†åŠ å…¥æ–‡æœ¬å†…å®¹
 		StyleConstants.setFontSize(setSize,15);
 		doc.setCharacterAttributes(0,144,setSize,true);
 		explain.setBackground(null);
@@ -275,12 +222,12 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 		JPanel jp = new JPanel();
 		jp.setLayout(new BorderLayout());
 
-		//¼ÓÈë ±íÍ· ¼° Êı¾İ
+		//åŠ å…¥ è¡¨å¤´ åŠ æ•°æ®
 		Vector columnNames=createColumnNames();
 		Vector data=createTableModelData();
 		model = new DefaultTableModel(data,columnNames);
 
-		//Éè¼Æ±í¸ñ²»¿É±à¼­
+		//è®¾è®¡è¡¨æ ¼ä¸å¯ç¼–è¾‘
 		table = new JTable(model){
 			public boolean isCellEditable(int row, int column) {
 				return false;
@@ -288,45 +235,34 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 		};
 
 		JScrollPane tablePanel = new JScrollPane(table);
-		table.setForeground(Color.BLACK);                   // ×ÖÌåÑÕÉ«
-		table.setFont(new Font(null, Font.PLAIN, 15));      // ×ÖÌåÑùÊ½
-		table.setSelectionForeground(Color.DARK_GRAY);      // Ñ¡ÖĞºó×ÖÌåÑÕÉ«
-		table.setSelectionBackground(Color.LIGHT_GRAY);     // Ñ¡ÖĞºó×ÖÌå±³¾°
+		table.setForeground(Color.BLACK);                   // å­—ä½“é¢œè‰²
+		table.setFont(new Font(null, Font.PLAIN, 15));      // å­—ä½“æ ·å¼
+		table.setSelectionForeground(Color.DARK_GRAY);      // é€‰ä¸­åå­—ä½“é¢œè‰²
+		table.setSelectionBackground(Color.LIGHT_GRAY);     // é€‰ä¸­åå­—ä½“èƒŒæ™¯
 		table.setGridColor(Color.GRAY);
 
-		// ÉèÖÃ±íÍ·
-		table.getTableHeader().setFont(new Font(null, Font.BOLD, 20));  // ÉèÖÃ±íÍ·Ãû³Æ×ÖÌåÑùÊ½
-		table.getTableHeader().setForeground(Color.red);                // ÉèÖÃ±íÍ·Ãû³Æ×ÖÌåÑÕÉ«
-		table.getTableHeader().setResizingAllowed(false);               // ÉèÖÃ²»ÔÊĞíÊÖ¶¯¸Ä±äÁĞ¿í
-		table.getTableHeader().setReorderingAllowed(false);             // ÉèÖÃ²»ÔÊĞíÍÏ¶¯ÖØĞÂÅÅĞò¸÷ÁĞ
-		// ÉèÖÃĞĞ¸ß
+		// è®¾ç½®è¡¨å¤´
+		table.getTableHeader().setFont(new Font(null, Font.BOLD, 20));  // è®¾ç½®è¡¨å¤´åç§°å­—ä½“æ ·å¼
+		table.getTableHeader().setForeground(Color.red);                // è®¾ç½®è¡¨å¤´åç§°å­—ä½“é¢œè‰²
+		table.getTableHeader().setResizingAllowed(false);               // è®¾ç½®ä¸å…è®¸æ‰‹åŠ¨æ”¹å˜åˆ—å®½
+		table.getTableHeader().setReorderingAllowed(false);             // è®¾ç½®ä¸å…è®¸æ‹–åŠ¨é‡æ–°æ’åºå„åˆ—
+		// è®¾ç½®è¡Œé«˜
 		table.setRowHeight(40);
-		//Êı¾İÏÔÊ¾ÇÒ¾ÓÖĞ
+		//æ•°æ®æ˜¾ç¤ºä¸”å±…ä¸­
 		DefaultTableCellRenderer r = new DefaultTableCellRenderer();
 		r.setHorizontalAlignment(JLabel.CENTER);
-		table.setDefaultRenderer(Object.class, r);
-		// ÉèÖÃÃ¿Ò»ÁĞÁĞ¿í
-		table.getColumnModel().getColumn(0).setPreferredWidth(5);
-		table.getColumnModel().getColumn(1).setPreferredWidth(280);
-		table.getColumnModel().getColumn(2).setPreferredWidth(110);
-		table.getColumnModel().getColumn(3).setPreferredWidth(110);
-		table.getColumnModel().getColumn(4).setPreferredWidth(25);
-		table.getColumnModel().getColumn(5).setPreferredWidth(35);
-		table.getColumnModel().getColumn(6).setPreferredWidth(30);
-		table.getColumnModel().getColumn(7).setPreferredWidth(45);
-		table.getColumnModel().getColumn(8).setPreferredWidth(45);
-		table.getColumnModel().getColumn(9).setPreferredWidth(50);
 
 
-		// ÉèÖÃ¹ö¶¯Ãæ°åÊÓ¿Ú´óĞ¡£¨³¬¹ı¸Ã´óĞ¡µÄĞĞÊı¾İ£¬ĞèÒªÍÏ¶¯¹ö¶¯Ìõ²ÅÄÜ¿´µ½£©
+
+		// è®¾ç½®æ»šåŠ¨é¢æ¿è§†å£å¤§å°ï¼ˆè¶…è¿‡è¯¥å¤§å°çš„è¡Œæ•°æ®ï¼Œéœ€è¦æ‹–åŠ¨æ»šåŠ¨æ¡æ‰èƒ½çœ‹åˆ°ï¼‰
 		table.setPreferredScrollableViewportSize(new Dimension(1000, 420));
 
-		//ÅÅĞòÆ÷
+		//æ’åºå™¨
 		RowSorter sorter = new TableRowSorter(model);
 		table.setRowSorter(sorter);
-		// °Ñ ±í¸ñ ·Åµ½ ¹ö¶¯Ãæ°å ÖĞ£¨±íÍ·½«×Ô¶¯Ìí¼Óµ½¹ö¶¯Ãæ°å¶¥²¿£©
+		// æŠŠ è¡¨æ ¼ æ”¾åˆ° æ»šåŠ¨é¢æ¿ ä¸­ï¼ˆè¡¨å¤´å°†è‡ªåŠ¨æ·»åŠ åˆ°æ»šåŠ¨é¢æ¿é¡¶éƒ¨ï¼‰
 		scrollPane = new JScrollPane(table);
-		// Ìí¼Ó ¹ö¶¯Ãæ°å µ½ ÄÚÈİÃæ°å
+		// æ·»åŠ  æ»šåŠ¨é¢æ¿ åˆ° å†…å®¹é¢æ¿
 		jp.add(scrollPane,BorderLayout.CENTER);
 
 		Label = new JLabel(" Score Management" ,JLabel.CENTER);
@@ -335,12 +271,12 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 		Label.setForeground(Color.BLACK);
 		jp.add(Label, BorderLayout.NORTH);
 
-		// ÉèÖÃ ÄÚÈİÃæ°å µ½ ´°¿Ú
+		// è®¾ç½® å†…å®¹é¢æ¿ åˆ° çª—å£
 		return jp;
 	}
 
 
-	//	±í¸ñÖĞµÄÊı¾İ
+	//	è¡¨æ ¼ä¸­çš„æ•°æ®
 	private Vector createTableModelData() {
 		Vector data = new Vector();
 		String t=null;
@@ -350,7 +286,7 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 			int i=0 ,k=1;
 			while ((t= br.readLine())!= null)
 			{
-				String [] s=t.split("\\s+");		//Í¨¹ı¿Õ¸ñ·Ö¸î×Ö·û´®Êı×é
+				String [] s=t.split("\\s+");		//é€šè¿‡ç©ºæ ¼åˆ†å‰²å­—ç¬¦ä¸²æ•°ç»„
 				Vector rowData = new Vector();
 
 				rowData.add(k);
@@ -376,7 +312,7 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 		}
 		return data;
 	}
-	//±íÍ·
+	//è¡¨å¤´
 	private Vector createColumnNames() {
 		Vector columnNames = new Vector();
 		columnNames.add("Order");
@@ -400,12 +336,12 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 		JTable table = null;
 		JScrollPane scrollPane ;
 
-		//¼ÓÈë ±íÍ· ¼° Êı¾İ
+		//åŠ å…¥ è¡¨å¤´ åŠ æ•°æ®
 		Vector columnNames=createColumnNames2();
 		Vector data=createTableModelData2();
 		model = new DefaultTableModel(data,columnNames);
 
-		//Éè¼Æ±í¸ñ²»¿É±à¼­
+		//è®¾è®¡è¡¨æ ¼ä¸å¯ç¼–è¾‘
 		table = new JTable(model){
 			public boolean isCellEditable(int row, int column) {
 				return false;
@@ -413,38 +349,38 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 		};
 
 		JScrollPane tablePanel = new JScrollPane(table);
-		table.setForeground(Color.BLACK);                   // ×ÖÌåÑÕÉ«
-		table.setFont(new Font(null, Font.PLAIN, 15));      // ×ÖÌåÑùÊ½
-		table.setSelectionForeground(Color.DARK_GRAY);      // Ñ¡ÖĞºó×ÖÌåÑÕÉ«
-		table.setSelectionBackground(Color.LIGHT_GRAY);     // Ñ¡ÖĞºó×ÖÌå±³¾°
+		table.setForeground(Color.BLACK);                   // å­—ä½“é¢œè‰²
+		table.setFont(new Font(null, Font.PLAIN, 15));      // å­—ä½“æ ·å¼
+		table.setSelectionForeground(Color.DARK_GRAY);      // é€‰ä¸­åå­—ä½“é¢œè‰²
+		table.setSelectionBackground(Color.LIGHT_GRAY);     // é€‰ä¸­åå­—ä½“èƒŒæ™¯
 		table.setGridColor(Color.GRAY);
 
-		// ÉèÖÃ±íÍ·
-		table.getTableHeader().setFont(new Font(null, Font.BOLD, 20));  // ÉèÖÃ±íÍ·Ãû³Æ×ÖÌåÑùÊ½
-		table.getTableHeader().setForeground(Color.RED);                // ÉèÖÃ±íÍ·Ãû³Æ×ÖÌåÑÕÉ«
-		table.getTableHeader().setResizingAllowed(false);               // ÉèÖÃ²»ÔÊĞíÊÖ¶¯¸Ä±äÁĞ¿í
-		table.getTableHeader().setReorderingAllowed(false);             // ÉèÖÃ²»ÔÊĞíÍÏ¶¯ÖØĞÂÅÅĞò¸÷ÁĞ
-		// ÉèÖÃĞĞ¸ß
+		// è®¾ç½®è¡¨å¤´
+		table.getTableHeader().setFont(new Font(null, Font.BOLD, 20));  // è®¾ç½®è¡¨å¤´åç§°å­—ä½“æ ·å¼
+		table.getTableHeader().setForeground(Color.RED);                // è®¾ç½®è¡¨å¤´åç§°å­—ä½“é¢œè‰²
+		table.getTableHeader().setResizingAllowed(false);               // è®¾ç½®ä¸å…è®¸æ‰‹åŠ¨æ”¹å˜åˆ—å®½
+		table.getTableHeader().setReorderingAllowed(false);             // è®¾ç½®ä¸å…è®¸æ‹–åŠ¨é‡æ–°æ’åºå„åˆ—
+		// è®¾ç½®è¡Œé«˜
 		table.setRowHeight(40);
-		//Êı¾İÏÔÊ¾ÇÒ¾ÓÖĞ
+		//æ•°æ®æ˜¾ç¤ºä¸”å±…ä¸­
 		DefaultTableCellRenderer r = new DefaultTableCellRenderer();
 		r.setHorizontalAlignment(JLabel.CENTER);
 		table.setDefaultRenderer(Object.class, r);
-		// ÉèÖÃÃ¿Ò»ÁĞÁĞ¿í
+		// è®¾ç½®æ¯ä¸€åˆ—åˆ—å®½
 		table.getColumnModel().getColumn(0).setPreferredWidth(5);
 		table.getColumnModel().getColumn(1).setPreferredWidth(280);
 		table.getColumnModel().getColumn(2).setPreferredWidth(110);
 		table.getColumnModel().getColumn(3).setPreferredWidth(110);
 
-		// ÉèÖÃ¹ö¶¯Ãæ°åÊÓ¿Ú´óĞ¡£¨³¬¹ı¸Ã´óĞ¡µÄĞĞÊı¾İ£¬ĞèÒªÍÏ¶¯¹ö¶¯Ìõ²ÅÄÜ¿´µ½£©
+		// è®¾ç½®æ»šåŠ¨é¢æ¿è§†å£å¤§å°ï¼ˆè¶…è¿‡è¯¥å¤§å°çš„è¡Œæ•°æ®ï¼Œéœ€è¦æ‹–åŠ¨æ»šåŠ¨æ¡æ‰èƒ½çœ‹åˆ°ï¼‰
 		table.setPreferredScrollableViewportSize(new Dimension(1000, 420));
 
-		//ÅÅĞòÆ÷
+		//æ’åºå™¨
 		RowSorter sorter = new TableRowSorter(model);
 		table.setRowSorter(sorter);
-		// °Ñ ±í¸ñ ·Åµ½ ¹ö¶¯Ãæ°å ÖĞ£¨±íÍ·½«×Ô¶¯Ìí¼Óµ½¹ö¶¯Ãæ°å¶¥²¿£©
+		// æŠŠ è¡¨æ ¼ æ”¾åˆ° æ»šåŠ¨é¢æ¿ ä¸­ï¼ˆè¡¨å¤´å°†è‡ªåŠ¨æ·»åŠ åˆ°æ»šåŠ¨é¢æ¿é¡¶éƒ¨ï¼‰
 		scrollPane = new JScrollPane(table);
-		// Ìí¼Ó ¹ö¶¯Ãæ°å µ½ ÄÚÈİÃæ°å
+		// æ·»åŠ  æ»šåŠ¨é¢æ¿ åˆ° å†…å®¹é¢æ¿
 		jp.add(scrollPane,BorderLayout.CENTER);
 
 		Label = new JLabel("Achievement Inquiry" ,JLabel.CENTER);
@@ -453,11 +389,11 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 		Label.setForeground(Color.BLACK);
 		jp.add(Label, BorderLayout.NORTH);
 
-		// ÉèÖÃ ÄÚÈİÃæ°å µ½ ´°¿Ú
+		// è®¾ç½® å†…å®¹é¢æ¿ åˆ° çª—å£
 		return jp;
 	}
 
-	//	±í¸ñÖĞµÄÊı¾İ
+	//	è¡¨æ ¼ä¸­çš„æ•°æ®
 	private Vector createTableModelData2() {
 		Vector data = new Vector();
 		String t=null;
@@ -467,7 +403,7 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 			int i=0 ,k=1;
 			while ((t= br.readLine())!= null)
 			{
-				String [] s=t.split("\\s+");		//Í¨¹ı¿Õ¸ñ·Ö¸î×Ö·û´®Êı×é
+				String [] s=t.split("\\s+");		//é€šè¿‡ç©ºæ ¼åˆ†å‰²å­—ç¬¦ä¸²æ•°ç»„
 				Vector rowData = new Vector();
 				rowData.add(k);
 				rowData.add(s[0]);
@@ -484,7 +420,7 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 		}
 		return data;
 	}
-	//±íÍ·
+	//è¡¨å¤´
 	private Vector createColumnNames2() {
 		Vector columnNames = new Vector();
 		columnNames.add("Index");
