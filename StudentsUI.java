@@ -49,31 +49,6 @@ public class StudentsUI extends JFrame implements ListSelectionListener {
 		JMenuItem i1, i2, i3, i4, i5;
 
 
-		JMenuBar mb=new JMenuBar();
-		menu=new JMenu("Menu");
-		Edit=new JMenu("Edit");
-		Import=new JMenu("Import");
-		Export=new JMenu("Export");
-		About=new JMenu("About");
-		submenu=new JMenu("Sub Menu");
-		i1=new JMenuItem("Item 1");
-		i2=new JMenuItem("Item 2");
-		i3=new JMenuItem("Item 3");
-		i4=new JMenuItem("Item 4");
-		i5=new JMenuItem("Item 5");
-		menu.add(i1); menu.add(i2); menu.add(i3);
-		submenu.add(i4); submenu.add(i5);
-		menu.add(submenu);
-		mb.add(menu);mb.add(Edit);mb.add(Import);mb.add(Export);mb.add(About);
-		mainframe.setJMenuBar(mb);
-		mainframe.setVisible(true);
-
-		panelList = new ArrayList<JPanel>();
-		list = new JList(function);
-		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		list.setSelectedIndex(0);
-		list.addListSelectionListener(this);
-		list.setFont(new Font("粗体",Font.BOLD,15));
 		//页面列表
 //		panelList.add(getPanelAboutSystem());
 		panelList.add(getPanelmainpageSystem());
