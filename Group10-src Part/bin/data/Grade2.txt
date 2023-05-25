@@ -1,0 +1,3 @@
+Hanging Branch,0,0,0,0
+A level,4,3,5,2
+B level,2,1,0,3

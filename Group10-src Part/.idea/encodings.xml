@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/entity/Examwork.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/entity/Students.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/entity/Teachers.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/function/Function.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/function/addframe/AddStudentframe.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/function/addframe/AddTeaframe.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/function/addframe/Addframe.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/function/deleteframe/del_Stu.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/function/deleteframe/del_Teacher.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/function/deleteframe/del_exam.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/function/judge.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/function/reviseframe/Revise_Student.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/function/reviseframe/Revise_Teacher.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/function/reviseframe/Revise_exam.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/gui/AdminUI.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/gui/LoginUI.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/gui/StudentsUI.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/gui/TeacherUI.java" charset="GBK" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>

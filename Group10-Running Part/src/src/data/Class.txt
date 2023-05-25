@@ -1,0 +1,4 @@
+EBU6403,Software Engineering, Lin Ma,2023Spring,6,15,50%
+EBU5403,Internet Protocol, Richard,2022fall,6,15,100%
+EBU6403,Software Engineering, Lin Ma,2023Spring,6,15,50%
+EBU6403,Software Engineering, Lin Ma,2023Spring,6,15,50%
